@@ -1,4 +1,4 @@
-# Build stage
+﻿# Build stage
 FROM golang:1.23-alpine AS builder
 
 RUN apk add --no-cache git ca-certificates
@@ -19,11 +19,11 @@ FROM alpine:3.21
 
 RUN apk add --no-cache ca-certificates tzdata
 
-RUN addgroup -S bosscloud && adduser -S bosscloud -G bosscloud
+RUN addgroup -S vpsflow && adduser -S vpsflow -G vpsflow
 
 COPY --from=builder /gateway /usr/local/bin/gateway
 
-USER bosscloud
+USER vpsflow
 
 EXPOSE 8080
 

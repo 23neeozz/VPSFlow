@@ -1,4 +1,4 @@
-# ADR-001: Monorepo Structure
+﻿# ADR-001: Monorepo Structure
 
 ## Status
 
@@ -6,7 +6,7 @@ Accepted
 
 ## Context
 
-BossCloud requires coordinated development across 25+ microservices, shared libraries, frontend applications, infrastructure code, and API contracts. We need a repository structure that supports independent service deployment while enabling code sharing and consistent standards.
+VPSFlow requires coordinated development across 25+ microservices, shared libraries, frontend applications, infrastructure code, and API contracts. We need a repository structure that supports independent service deployment while enabling code sharing and consistent standards.
 
 ## Decision
 

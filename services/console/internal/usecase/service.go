@@ -1,4 +1,4 @@
-package usecase
+﻿package usecase
 
 import (
 	"context"
@@ -9,10 +9,10 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/bosscloud/bosscloud/libs/go/errors"
-	"github.com/bosscloud/bosscloud/libs/go/ids"
-	"github.com/bosscloud/bosscloud/services/console/internal/domain"
-	"github.com/bosscloud/bosscloud/services/console/internal/port"
+	"github.com/vpsflow/vpsflow/libs/go/errors"
+	"github.com/vpsflow/vpsflow/libs/go/ids"
+	"github.com/vpsflow/vpsflow/services/console/internal/domain"
+	"github.com/vpsflow/vpsflow/services/console/internal/port"
 )
 
 type Service struct {

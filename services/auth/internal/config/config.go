@@ -1,10 +1,10 @@
-package config
+﻿package config
 
 import (
 	"fmt"
 	"time"
 
-	libconfig "github.com/bosscloud/bosscloud/libs/go/config"
+	libconfig "github.com/vpsflow/vpsflow/libs/go/config"
 )
 
 // Config holds auth service configuration.
@@ -53,11 +53,11 @@ func Load() (Config, error) {
 		ServiceName:      libconfig.String("AUTH_SERVICE_NAME", "auth"),
 		ServiceVersion:   libconfig.String("AUTH_SERVICE_VERSION", "0.1.0"),
 		OTLPEndpoint:     libconfig.String("OTEL_EXPORTER_OTLP_ENDPOINT", ""),
-		DatabaseURL:      libconfig.String("AUTH_DATABASE_URL", "postgres://bosscloud:bosscloud_dev@localhost:5432/bosscloud_auth?sslmode=disable"),
+		DatabaseURL:      libconfig.String("AUTH_DATABASE_URL", "postgres://vpsflow:vpsflow_dev@localhost:5432/vpsflow_auth?sslmode=disable"),
 		MigrationsPath:   libconfig.String("AUTH_MIGRATIONS_PATH", "migrations"),
 		JWTSigningKey:    libconfig.String("JWT_SIGNING_KEY", ""),
-		JWTIssuer:        libconfig.String("JWT_ISSUER", "bosscloud"),
-		JWTAudience:      libconfig.String("JWT_AUDIENCE", "bosscloud-api"),
+		JWTIssuer:        libconfig.String("JWT_ISSUER", "vpsflow"),
+		JWTAudience:      libconfig.String("JWT_AUDIENCE", "vpsflow-api"),
 		AccessTokenTTL:   libconfig.Duration("AUTH_ACCESS_TOKEN_TTL", 15*time.Minute),
 		RefreshTokenTTL:  libconfig.Duration("AUTH_REFRESH_TOKEN_TTL", 7*24*time.Hour),
 		SessionTTL:       libconfig.Duration("AUTH_SESSION_TTL", 7*24*time.Hour),

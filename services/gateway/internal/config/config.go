@@ -1,10 +1,10 @@
-package config
+﻿package config
 
 import (
 	"fmt"
 	"time"
 
-	libconfig "github.com/bosscloud/bosscloud/libs/go/config"
+	libconfig "github.com/vpsflow/vpsflow/libs/go/config"
 )
 
 // Config holds gateway service configuration loaded from environment.
@@ -65,8 +65,8 @@ func Load() (Config, error) {
 		VpsServiceURL:     libconfig.String("VPS_SERVICE_URL", "http://127.0.0.1:8088"),
 		AgentControlServiceURL: libconfig.String("AGENT_CONTROL_SERVICE_URL", "http://127.0.0.1:8086"),
 		JWTSigningKey:   libconfig.String("JWT_SIGNING_KEY", ""),
-		JWTIssuer:       libconfig.String("JWT_ISSUER", "bosscloud"),
-		JWTAudience:     libconfig.String("JWT_AUDIENCE", "bosscloud-api"),
+		JWTIssuer:       libconfig.String("JWT_ISSUER", "vpsflow"),
+		JWTAudience:     libconfig.String("JWT_AUDIENCE", "vpsflow-api"),
 	}
 
 	if cfg.HTTPAddr == "" {

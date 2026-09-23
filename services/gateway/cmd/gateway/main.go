@@ -1,4 +1,4 @@
-package main
+﻿package main
 
 import (
 	"context"
@@ -7,9 +7,9 @@ import (
 	"os/signal"
 	"syscall"
 
-	httpserver "github.com/bosscloud/bosscloud/services/gateway/internal/adapter/http"
-	"github.com/bosscloud/bosscloud/services/gateway/internal/config"
-	"github.com/bosscloud/bosscloud/libs/go/observability"
+	httpserver "github.com/vpsflow/vpsflow/services/gateway/internal/adapter/http"
+	"github.com/vpsflow/vpsflow/services/gateway/internal/config"
+	"github.com/vpsflow/vpsflow/libs/go/observability"
 )
 
 func main() {

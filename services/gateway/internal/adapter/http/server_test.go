@@ -1,4 +1,4 @@
-package http_test
+﻿package http_test
 
 import (
 	"io"
@@ -6,8 +6,8 @@ import (
 	"testing"
 	"time"
 
-	httpserver "github.com/bosscloud/bosscloud/services/gateway/internal/adapter/http"
-	"github.com/bosscloud/bosscloud/services/gateway/internal/config"
+	httpserver "github.com/vpsflow/vpsflow/services/gateway/internal/adapter/http"
+	"github.com/vpsflow/vpsflow/services/gateway/internal/config"
 	"log/slog"
 )
 

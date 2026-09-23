@@ -1,4 +1,4 @@
-package executor
+﻿package executor
 
 import (
 	"context"
@@ -10,7 +10,7 @@ import (
 	"strings"
 	"sync"
 
-	"github.com/bosscloud/bosscloud/libs/go/agentprotocol"
+	"github.com/vpsflow/vpsflow/libs/go/agentprotocol"
 )
 
 // DomainExecutor runs libvirt domain operations.
@@ -51,7 +51,7 @@ func (e *SimulateExecutor) CreateDomain(ctx context.Context, payload agentprotoc
 	}
 	e.domains[payload.Name] = "running"
 	disk := filepath.Join(e.dir, payload.Name+".qcow2")
-	return os.WriteFile(disk, []byte("bosscloud-simulated-disk"), 0o644)
+	return os.WriteFile(disk, []byte("vpsflow-simulated-disk"), 0o644)
 }
 
 func (e *SimulateExecutor) StartDomain(ctx context.Context, domainName string) error {
@@ -105,7 +105,7 @@ func NewVirshExecutor() *VirshExecutor {
 
 func (e *VirshExecutor) CreateDomain(ctx context.Context, payload agentprotocol.CreateDomainPayload) error {
 	xml := buildDomainXML(payload)
-	tmp, err := os.CreateTemp("", "bosscloud-domain-*.xml")
+	tmp, err := os.CreateTemp("", "vpsflow-domain-*.xml")
 	if err != nil {
 		return err
 	}
@@ -174,7 +174,7 @@ func buildDomainXML(payload agentprotocol.CreateDomainPayload) string {
 	memKiB := payload.MemoryMB * 1024
 	diskPath := payload.ImagePath
 	if diskPath == "" {
-		diskPath = fmt.Sprintf("/var/lib/bosscloud/images/%s.qcow2", payload.Name)
+		diskPath = fmt.Sprintf("/var/lib/vpsflow/images/%s.qcow2", payload.Name)
 	}
 	return fmt.Sprintf(`<domain type='kvm'>
   <name>%s</name>

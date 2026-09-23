@@ -1,26 +1,26 @@
-services:
+﻿services:
   postgres:
     image: postgres:16-alpine
-    container_name: bosscloud-postgres
+    container_name: vpsflow-postgres
     restart: unless-stopped
     environment:
-      POSTGRES_USER: bosscloud
-      POSTGRES_PASSWORD: bosscloud_dev
-      POSTGRES_DB: bosscloud
+      POSTGRES_USER: vpsflow
+      POSTGRES_PASSWORD: vpsflow_dev
+      POSTGRES_DB: vpsflow
     ports:
       - "5432:5432"
     volumes:
       - postgres_data:/var/lib/postgresql/data
       - ./init-databases.sql:/docker-entrypoint-initdb.d/init-databases.sql:ro
     healthcheck:
-      test: ["CMD-SHELL", "pg_isready -U bosscloud"]
+      test: ["CMD-SHELL", "pg_isready -U vpsflow"]
       interval: 5s
       timeout: 5s
       retries: 10
 
   redis:
     image: redis:7-alpine
-    container_name: bosscloud-redis
+    container_name: vpsflow-redis
     restart: unless-stopped
     ports:
       - "6379:6379"
@@ -34,7 +34,7 @@ services:
 
   nats:
     image: nats:2.10-alpine
-    container_name: bosscloud-nats
+    container_name: vpsflow-nats
     restart: unless-stopped
     command: ["-js", "-m", "8222"]
     ports:
@@ -48,12 +48,12 @@ services:
 
   minio:
     image: minio/minio:RELEASE.2024-12-18T13-15-44Z
-    container_name: bosscloud-minio
+    container_name: vpsflow-minio
     restart: unless-stopped
     command: server /data --console-address ":9001"
     environment:
-      MINIO_ROOT_USER: bosscloud
-      MINIO_ROOT_PASSWORD: bosscloud_dev_secret
+      MINIO_ROOT_USER: vpsflow
+      MINIO_ROOT_PASSWORD: vpsflow_dev_secret
     ports:
       - "9000:9000"
       - "9001:9001"
@@ -67,7 +67,7 @@ services:
 
   otel-collector:
     image: otel/opentelemetry-collector-contrib:0.116.1
-    container_name: bosscloud-otel-collector
+    container_name: vpsflow-otel-collector
     restart: unless-stopped
     command: ["--config=/etc/otel-collector-config.yaml"]
     volumes:
@@ -81,7 +81,7 @@ services:
 
   prometheus:
     image: prom/prometheus:v3.1.0
-    container_name: bosscloud-prometheus
+    container_name: vpsflow-prometheus
     restart: unless-stopped
     volumes:
       - ../observability/prometheus.yml:/etc/prometheus/prometheus.yml:ro
@@ -94,11 +94,11 @@ services:
 
   grafana:
     image: grafana/grafana:11.4.0
-    container_name: bosscloud-grafana
+    container_name: vpsflow-grafana
     restart: unless-stopped
     environment:
       GF_SECURITY_ADMIN_USER: admin
-      GF_SECURITY_ADMIN_PASSWORD: bosscloud_dev
+      GF_SECURITY_ADMIN_PASSWORD: vpsflow_dev
       GF_USERS_ALLOW_SIGN_UP: "false"
     ports:
       - "3001:3000"

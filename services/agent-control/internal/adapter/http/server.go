@@ -1,16 +1,16 @@
-package http
+﻿package http
 
 import (
 	"log/slog"
 	"net/http"
 	"time"
 
-	agenthandler "github.com/bosscloud/bosscloud/services/agent-control/internal/adapter/http/agent"
-	healthhandler "github.com/bosscloud/bosscloud/services/agent-control/internal/adapter/http/health"
-	internalhandler "github.com/bosscloud/bosscloud/services/agent-control/internal/adapter/http/internalapi"
-	"github.com/bosscloud/bosscloud/services/agent-control/internal/config"
-	"github.com/bosscloud/bosscloud/services/agent-control/internal/domain/health"
-	"github.com/bosscloud/bosscloud/services/agent-control/internal/usecase"
+	agenthandler "github.com/vpsflow/vpsflow/services/agent-control/internal/adapter/http/agent"
+	healthhandler "github.com/vpsflow/vpsflow/services/agent-control/internal/adapter/http/health"
+	internalhandler "github.com/vpsflow/vpsflow/services/agent-control/internal/adapter/http/internalapi"
+	"github.com/vpsflow/vpsflow/services/agent-control/internal/config"
+	"github.com/vpsflow/vpsflow/services/agent-control/internal/domain/health"
+	"github.com/vpsflow/vpsflow/services/agent-control/internal/usecase"
 	"github.com/gofiber/fiber/v2"
 	"github.com/gofiber/fiber/v2/middleware/recover"
 	"github.com/google/uuid"

@@ -1,4 +1,4 @@
-package vmclient
+﻿package vmclient
 
 import (
 	"context"
@@ -7,7 +7,7 @@ import (
 	"net/http"
 	"time"
 
-	apperrors "github.com/bosscloud/bosscloud/libs/go/errors"
+	apperrors "github.com/vpsflow/vpsflow/libs/go/errors"
 )
 
 type HTTPClient struct {

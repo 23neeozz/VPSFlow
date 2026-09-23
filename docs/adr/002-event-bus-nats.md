@@ -1,4 +1,4 @@
-# ADR-002: Event Bus — NATS JetStream
+﻿# ADR-002: Event Bus — NATS JetStream
 
 ## Status
 
@@ -6,13 +6,13 @@ Accepted
 
 ## Context
 
-BossCloud requires an event-driven architecture for domain events (VM lifecycle, auth events, billing metering, audit). The bus must support at-least-once delivery, consumer groups, replay, and low operational overhead for early deployment.
+VPSFlow requires an event-driven architecture for domain events (VM lifecycle, auth events, billing metering, audit). The bus must support at-least-once delivery, consumer groups, replay, and low operational overhead for early deployment.
 
 ## Decision
 
 Use **NATS JetStream** as the primary event bus.
 
-- Subjects follow: `bosscloud.<context>.<entity>.<event>.v1`
+- Subjects follow: `vpsflow.<context>.<entity>.<event>.v1`
 - Transactional outbox pattern per service for reliable publication
 - Idempotent consumers with deduplication via `event_id`
 - Dead Letter Queue (DLQ) per subject stream

@@ -1,4 +1,4 @@
-package main
+﻿package main
 
 import (
 	"context"
@@ -7,15 +7,15 @@ import (
 	"os/signal"
 	"syscall"
 
-	httpserver "github.com/bosscloud/bosscloud/services/vps/internal/adapter/http"
-	"github.com/bosscloud/bosscloud/services/vps/internal/adapter/consoleclient"
-	"github.com/bosscloud/bosscloud/services/vps/internal/adapter/repository/postgres"
-	"github.com/bosscloud/bosscloud/services/vps/internal/adapter/tenantclient"
-	"github.com/bosscloud/bosscloud/services/vps/internal/adapter/vmclient"
-	"github.com/bosscloud/bosscloud/services/vps/internal/config"
-	"github.com/bosscloud/bosscloud/services/vps/internal/usecase"
-	"github.com/bosscloud/bosscloud/libs/go/observability"
-	"github.com/bosscloud/bosscloud/libs/go/security/jwt"
+	httpserver "github.com/vpsflow/vpsflow/services/vps/internal/adapter/http"
+	"github.com/vpsflow/vpsflow/services/vps/internal/adapter/consoleclient"
+	"github.com/vpsflow/vpsflow/services/vps/internal/adapter/repository/postgres"
+	"github.com/vpsflow/vpsflow/services/vps/internal/adapter/tenantclient"
+	"github.com/vpsflow/vpsflow/services/vps/internal/adapter/vmclient"
+	"github.com/vpsflow/vpsflow/services/vps/internal/config"
+	"github.com/vpsflow/vpsflow/services/vps/internal/usecase"
+	"github.com/vpsflow/vpsflow/libs/go/observability"
+	"github.com/vpsflow/vpsflow/libs/go/security/jwt"
 	"github.com/jackc/pgx/v5/pgxpool"
 )
 

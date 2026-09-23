@@ -1,10 +1,10 @@
-package port
+﻿package port
 
 import (
 	"context"
 	"time"
 
-	"github.com/bosscloud/bosscloud/services/auth/internal/domain"
+	"github.com/vpsflow/vpsflow/services/auth/internal/domain"
 )
 
 // UserRepository persists user identities.

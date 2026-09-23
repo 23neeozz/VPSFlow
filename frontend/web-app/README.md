@@ -1,6 +1,6 @@
-# BossCloud Web App
+﻿# VPSFlow Web App
 
-MVP del panel web de BossCloud, construido con **Next.js 14 (App Router) + TypeScript + Tailwind**.
+MVP del panel web de VPSFlow, construido con **Next.js 14 (App Router) + TypeScript + Tailwind**.
 
 Habla con el backend a través del **gateway** (`/api/v1/...`) usando rutas de proxy
 server-side de Next.js, por lo que el navegador nunca contacta directamente con el
@@ -17,7 +17,7 @@ gateway y los tokens se guardan en cookies `httpOnly`.
 ## Requisitos
 
 - Node.js 18.18+ (recomendado 20 LTS).
-- El stack de BossCloud corriendo (gateway en `http://127.0.0.1:8080` por defecto).
+- El stack de VPSFlow corriendo (gateway en `http://127.0.0.1:8080` por defecto).
 
 ## Puesta en marcha
 
@@ -35,7 +35,7 @@ Abre http://localhost:3000
 `.env.local`:
 
 ```
-BOSSCLOUD_GATEWAY_URL=http://127.0.0.1:8080
+VPSFLOW_GATEWAY_URL=http://127.0.0.1:8080
 ```
 
 Solo se usa en el servidor Next.js (nunca se expone al navegador).

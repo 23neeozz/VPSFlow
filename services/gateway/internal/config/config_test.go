@@ -1,9 +1,9 @@
-package config_test
+﻿package config_test
 
 import (
 	"testing"
 
-	"github.com/bosscloud/bosscloud/services/gateway/internal/config"
+	"github.com/vpsflow/vpsflow/services/gateway/internal/config"
 )
 
 func TestLoadDefaults(t *testing.T) {

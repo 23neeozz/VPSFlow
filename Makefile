@@ -1,4 +1,4 @@
-# BossCloud Makefile
+﻿# VPSFlow Makefile
 
 .PHONY: help infra-up infra-down test build-gateway build-auth run-gateway run-auth tidy
 
@@ -57,7 +57,7 @@ vet: ## Run go vet on all modules
 	go vet ./services/auth/...
 
 docker-build-gateway: ## Build gateway Docker image
-	docker build -f services/gateway/Dockerfile -t bosscloud/gateway:latest .
+	docker build -f services/gateway/Dockerfile -t vpsflow/gateway:latest .
 
 docker-build-auth: ## Build auth Docker image
-	docker build -f services/auth/Dockerfile -t bosscloud/auth:latest .
+	docker build -f services/auth/Dockerfile -t vpsflow/auth:latest .

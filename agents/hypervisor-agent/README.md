@@ -1,6 +1,6 @@
-# Hypervisor Agent
+﻿# Hypervisor Agent
 
-BossCloud agent that runs on KVM hypervisor nodes and executes libvirt operations under command from agent-control.
+VPSFlow agent that runs on KVM hypervisor nodes and executes libvirt operations under command from agent-control.
 
 ## Modes
 

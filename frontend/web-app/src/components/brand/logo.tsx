@@ -6,7 +6,7 @@ export function Logo({ className = "" }: { className?: string }) {
     <Link href="/" className={`inline-flex items-center ${className}`}>
       <Image
         src="/img/logo.svg"
-        alt="Panel"
+        alt="VPSFlow"
         width={120}
         height={36}
         priority
@@ -21,7 +21,7 @@ export function LogoMark({ className = "" }: { className?: string }) {
     <div
       className={`flex h-9 w-9 items-center justify-center rounded-[10px] border border-bc-border bg-bc-card ${className}`}
     >
-      <span className="text-sm font-bold text-bc-primary">P</span>
+      <span className="text-sm font-bold text-bc-primary">V</span>
     </div>
   );
 }

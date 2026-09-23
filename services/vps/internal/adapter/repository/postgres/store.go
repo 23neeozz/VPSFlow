@@ -1,12 +1,12 @@
-package postgres
+﻿package postgres
 
 import (
 	"context"
 	"errors"
 	"time"
 
-	apperrors "github.com/bosscloud/bosscloud/libs/go/errors"
-	"github.com/bosscloud/bosscloud/services/vps/internal/domain"
+	apperrors "github.com/vpsflow/vpsflow/libs/go/errors"
+	"github.com/vpsflow/vpsflow/services/vps/internal/domain"
 	"github.com/jackc/pgx/v5"
 	"github.com/jackc/pgx/v5/pgxpool"
 )

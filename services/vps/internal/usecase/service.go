@@ -1,14 +1,14 @@
-package usecase
+﻿package usecase
 
 import (
 	"context"
 	"strings"
 	"time"
 
-	"github.com/bosscloud/bosscloud/libs/go/errors"
-	"github.com/bosscloud/bosscloud/libs/go/ids"
-	"github.com/bosscloud/bosscloud/services/vps/internal/domain"
-	"github.com/bosscloud/bosscloud/services/vps/internal/port"
+	"github.com/vpsflow/vpsflow/libs/go/errors"
+	"github.com/vpsflow/vpsflow/libs/go/ids"
+	"github.com/vpsflow/vpsflow/services/vps/internal/domain"
+	"github.com/vpsflow/vpsflow/services/vps/internal/port"
 )
 
 var adminRoles = map[string]bool{

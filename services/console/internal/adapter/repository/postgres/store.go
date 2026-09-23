@@ -1,4 +1,4 @@
-package postgres
+﻿package postgres
 
 import (
 	"context"
@@ -7,9 +7,9 @@ import (
 	"fmt"
 	"time"
 
-	apperrors "github.com/bosscloud/bosscloud/libs/go/errors"
-	"github.com/bosscloud/bosscloud/services/console/internal/domain"
-	consolemigrations "github.com/bosscloud/bosscloud/services/console/migrations"
+	apperrors "github.com/vpsflow/vpsflow/libs/go/errors"
+	"github.com/vpsflow/vpsflow/services/console/internal/domain"
+	consolemigrations "github.com/vpsflow/vpsflow/services/console/migrations"
 	"github.com/golang-migrate/migrate/v4"
 	"github.com/golang-migrate/migrate/v4/database/postgres"
 	"github.com/golang-migrate/migrate/v4/source/iofs"

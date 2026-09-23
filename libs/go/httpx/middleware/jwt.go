@@ -1,11 +1,11 @@
-package middleware
+﻿package middleware
 
 import (
 	"strings"
 
-	"github.com/bosscloud/bosscloud/libs/go/errors"
-	"github.com/bosscloud/bosscloud/libs/go/httpx"
-	"github.com/bosscloud/bosscloud/libs/go/security/jwt"
+	"github.com/vpsflow/vpsflow/libs/go/errors"
+	"github.com/vpsflow/vpsflow/libs/go/httpx"
+	"github.com/vpsflow/vpsflow/libs/go/security/jwt"
 	"github.com/gofiber/fiber/v2"
 )
 

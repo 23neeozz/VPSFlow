@@ -1,4 +1,4 @@
-name: CI
+﻿name: CI
 
 on:
   push:
@@ -92,8 +92,8 @@ jobs:
 
       - name: Build service images
         run: |
-          docker build -f services/gateway/Dockerfile -t bosscloud/gateway:ci .
-          docker build -f services/auth/Dockerfile -t bosscloud/auth:ci .
+          docker build -f services/gateway/Dockerfile -t vpsflow/gateway:ci .
+          docker build -f services/auth/Dockerfile -t vpsflow/auth:ci .
 
   security-scan:
     name: Security Scan

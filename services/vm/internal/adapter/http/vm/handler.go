@@ -1,11 +1,11 @@
-package vm
+﻿package vm
 
 import (
 	"strings"
 
-	"github.com/bosscloud/bosscloud/libs/go/errors"
-	"github.com/bosscloud/bosscloud/libs/go/httpx"
-	"github.com/bosscloud/bosscloud/services/vm/internal/usecase"
+	"github.com/vpsflow/vpsflow/libs/go/errors"
+	"github.com/vpsflow/vpsflow/libs/go/httpx"
+	"github.com/vpsflow/vpsflow/services/vm/internal/usecase"
 	"github.com/gofiber/fiber/v2"
 )
 

@@ -1,4 +1,4 @@
-# ☁️ BossCloud — Enterprise Cloud Infrastructure Platform
+﻿# ☁️ VPSFlow — Enterprise Cloud Infrastructure Platform
 
 [![Go Version](https://img.shields.io/badge/Go-1.23+-00ADD8?style=flat&logo=go)](https://golang.org)
 [![Next.js](https://img.shields.io/badge/Next.js-14.2+-black?style=flat&logo=next.js)](https://nextjs.org)
@@ -7,7 +7,7 @@
 [![Docker](https://img.shields.io/badge/Container-Docker%20Compose-2496ED?style=flat&logo=docker)](https://www.docker.com)
 [![License](https://img.shields.io/badge/License-Proprietary-red.svg)](#license)
 
-**BossCloud** es una plataforma de infraestructura cloud empresarial diseñada para la gestión, orquestación y aprovisionamiento a gran escala de virtualización KVM, almacenamiento distribuido y redes definidas por software (SDN). 
+**VPSFlow** es una plataforma de infraestructura cloud empresarial diseñada para la gestión, orquestación y aprovisionamiento a gran escala de virtualización KVM, almacenamiento distribuido y redes definidas por software (SDN). 
 
 Ofrece un plano de control (*Control Plane*) basado en microservicios desacoplados y orientados a eventos, agentes de alto rendimiento (*Data Plane*) desplegados directamente sobre nodos hipervisores KVM, y una interfaz web moderna (*Next.js*) orientada a desarrolladores y empresas.
 
@@ -33,7 +33,7 @@ Ofrece un plano de control (*Control Plane*) basado en microservicios desacoplad
 
 ## 🎯 Visión General y Principios de Diseño
 
-BossCloud no es un simple panel de hosting, sino una solución cloud completa inspirada en los estándares de ingeniería más avanzados (Vercel, AWS, Stripe, Cloudflare).
+VPSFlow no es un simple panel de hosting, sino una solución cloud completa inspirada en los estándares de ingeniería más avanzados (Vercel, AWS, Stripe, Cloudflare).
 
 | Principio | Implementación |
 |-----------|----------------|
@@ -152,7 +152,7 @@ flowchart TB
 ## 📁 Estructura del Repositorio
 
 ```text
-bosscloud/
+vpsflow/
 ├── agents/                  # Agentes nativos para hipervisores
 │   └── hypervisor-agent/    # Demonio KVM/libvirt
 ├── contracts/               # Especificaciones de API
@@ -227,7 +227,7 @@ Esto desplegará los siguientes componentes en segundo plano:
 - 📨 **NATS JetStream** (`localhost:4222`, monitoring en `localhost:8222`)
 - 🪣 **MinIO S3** (`localhost:9000`, Consola Web en `localhost:9001`)
 - 📊 **Prometheus** (`localhost:9090`)
-- 📈 **Grafana** (`localhost:3001` - user: `admin`, pass: `bosscloud_dev`)
+- 📈 **Grafana** (`localhost:3001` - user: `admin`, pass: `vpsflow_dev`)
 - 🔭 **OpenTelemetry Collector** (`localhost:4317` gRPC / `4318` HTTP)
 
 ### 3. Ejecutar los Microservicios
@@ -253,14 +253,14 @@ curl http://localhost:8080/healthz
 # Registrar un usuario inicial de prueba
 curl -X POST http://localhost:8080/api/v1/auth/register \
   -H "Content-Type: application/json" \
-  -d '{"email":"admin@bosscloud.local","password":"SecurePassword123!","name":"BossCloud Admin"}'
+  -d '{"email":"admin@vpsflow.local","password":"SecurePassword123!","name":"VPSFlow Admin"}'
 ```
 
 ---
 
 ## 💻 Frontend (Web App & Admin)
 
-El frontend de BossCloud está construido con un enfoque **Dark Mode Premium**, animaciones con Framer Motion, tipografía **Plus Jakarta Sans** y mapas 3D interactivos:
+El frontend de VPSFlow está construido con un enfoque **Dark Mode Premium**, animaciones con Framer Motion, tipografía **Plus Jakarta Sans** y mapas 3D interactivos:
 
 ```bash
 cd frontend/web-app
@@ -287,8 +287,8 @@ La aplicación estará disponible en [http://localhost:3000](http://localhost:30
   - `iam-v1.yaml`: Gestión de usuarios, roles y permisos.
   - `tenant-v1.yaml`: Organizaciones y membresías.
 - **Event Bus (NATS)**: Especificaciones AsyncAPI en `contracts/asyncapi/` con convención:
-  `bosscloud.<context>.<entity>.<event>.v1` (ej: `bosscloud.vm.instance.created.v1`).
-- **Internal RPC**: Definiciones Protocol Buffers en `proto/bosscloud/` con soporte para mTLS estricto.
+  `vpsflow.<context>.<entity>.<event>.v1` (ej: `vpsflow.vm.instance.created.v1`).
+- **Internal RPC**: Definiciones Protocol Buffers en `proto/vpsflow/` con soporte para mTLS estricto.
 
 ---
 
@@ -297,9 +297,9 @@ La aplicación estará disponible en [http://localhost:3000](http://localhost:30
 | Herramienta | URL Local | Credenciales por defecto |
 |-------------|-----------|--------------------------|
 | **API Gateway** | `http://localhost:8080` | N/A |
-| **Grafana** | `http://localhost:3001` | `admin` / `bosscloud_dev` |
+| **Grafana** | `http://localhost:3001` | `admin` / `vpsflow_dev` |
 | **Prometheus** | `http://localhost:9090` | N/A |
-| **MinIO Console** | `http://localhost:9001` | `bosscloud_minio` / `bosscloud_minio_secret` |
+| **MinIO Console** | `http://localhost:9001` | `vpsflow_minio` / `vpsflow_minio_secret` |
 | **NATS Monitor** | `http://localhost:8222` | N/A |
 
 ---
@@ -328,4 +328,4 @@ cd ../gateway && go test -race ./...
 
 ## 📄 Licencia
 
-Propiedad de **BossCloud**. Todos los derechos reservados. Uso no autorizado o distribución prohibida.
+Propiedad de **VPSFlow**. Todos los derechos reservados. Uso no autorizado o distribución prohibida.

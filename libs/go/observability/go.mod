@@ -1,4 +1,4 @@
-module github.com/bosscloud/bosscloud/libs/go/observability
+﻿module github.com/vpsflow/vpsflow/libs/go/observability
 
 go 1.23.0
 

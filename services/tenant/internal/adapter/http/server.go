@@ -1,17 +1,17 @@
-package http
+﻿package http
 
 import (
 	"log/slog"
 	"net/http"
 	"time"
 
-	tenanthandler "github.com/bosscloud/bosscloud/services/tenant/internal/adapter/http/tenant"
-	healthhandler "github.com/bosscloud/bosscloud/services/tenant/internal/adapter/http/health"
-	"github.com/bosscloud/bosscloud/services/tenant/internal/config"
-	"github.com/bosscloud/bosscloud/services/tenant/internal/domain/health"
-	"github.com/bosscloud/bosscloud/services/tenant/internal/usecase"
-	"github.com/bosscloud/bosscloud/libs/go/httpx/middleware"
-	"github.com/bosscloud/bosscloud/libs/go/security/jwt"
+	tenanthandler "github.com/vpsflow/vpsflow/services/tenant/internal/adapter/http/tenant"
+	healthhandler "github.com/vpsflow/vpsflow/services/tenant/internal/adapter/http/health"
+	"github.com/vpsflow/vpsflow/services/tenant/internal/config"
+	"github.com/vpsflow/vpsflow/services/tenant/internal/domain/health"
+	"github.com/vpsflow/vpsflow/services/tenant/internal/usecase"
+	"github.com/vpsflow/vpsflow/libs/go/httpx/middleware"
+	"github.com/vpsflow/vpsflow/libs/go/security/jwt"
 	"github.com/gofiber/fiber/v2"
 	"github.com/gofiber/fiber/v2/middleware/recover"
 	"github.com/google/uuid"

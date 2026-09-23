@@ -1,9 +1,9 @@
-package health
+﻿package health
 
 import (
 	"net/http"
 
-	domainhealth "github.com/bosscloud/bosscloud/services/agent-control/internal/domain/health"
+	domainhealth "github.com/vpsflow/vpsflow/services/agent-control/internal/domain/health"
 	"github.com/gofiber/fiber/v2"
 )
 

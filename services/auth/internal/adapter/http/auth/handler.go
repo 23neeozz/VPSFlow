@@ -1,12 +1,12 @@
-package auth
+﻿package auth
 
 import (
 	"strings"
 
-	"github.com/bosscloud/bosscloud/libs/go/errors"
-	"github.com/bosscloud/bosscloud/libs/go/httpx"
-	"github.com/bosscloud/bosscloud/services/auth/internal/domain"
-	"github.com/bosscloud/bosscloud/services/auth/internal/usecase"
+	"github.com/vpsflow/vpsflow/libs/go/errors"
+	"github.com/vpsflow/vpsflow/libs/go/httpx"
+	"github.com/vpsflow/vpsflow/services/auth/internal/domain"
+	"github.com/vpsflow/vpsflow/services/auth/internal/usecase"
 	"github.com/gofiber/fiber/v2"
 )
 

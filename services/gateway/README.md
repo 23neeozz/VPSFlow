@@ -1,6 +1,6 @@
-# Gateway Service
+﻿# Gateway Service
 
-API Gateway for BossCloud. Entry point for all public REST and WebSocket traffic.
+API Gateway for VPSFlow. Entry point for all public REST and WebSocket traffic.
 
 ## Responsibilities
 
@@ -45,5 +45,5 @@ go test ./...
 ## Docker
 
 ```bash
-docker build -f Dockerfile -t bosscloud/gateway:latest ../..
+docker build -f Dockerfile -t vpsflow/gateway:latest ../..
 ```

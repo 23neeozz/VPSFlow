@@ -1,4 +1,4 @@
-package controlclient
+﻿package controlclient
 
 import (
 	"bytes"
@@ -9,7 +9,7 @@ import (
 	"net/http"
 	"time"
 
-	"github.com/bosscloud/bosscloud/libs/go/agentprotocol"
+	"github.com/vpsflow/vpsflow/libs/go/agentprotocol"
 )
 
 type Client struct {

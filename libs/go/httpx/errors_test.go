@@ -1,9 +1,9 @@
-package httpx
+﻿package httpx
 
 import (
 	"testing"
 
-	"github.com/bosscloud/bosscloud/libs/go/errors"
+	"github.com/vpsflow/vpsflow/libs/go/errors"
 	"github.com/gofiber/fiber/v2"
 )
 

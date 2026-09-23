@@ -1,4 +1,4 @@
-package errors
+﻿package errors
 
 import (
 	"errors"
@@ -19,7 +19,7 @@ const (
 	CodeServiceUnavailable Code = "service_unavailable"
 )
 
-// AppError is the canonical application error type for BossCloud services.
+// AppError is the canonical application error type for VPSFlow services.
 type AppError struct {
 	Code    Code
 	Message string

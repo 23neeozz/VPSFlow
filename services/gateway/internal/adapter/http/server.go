@@ -1,4 +1,4 @@
-package http
+﻿package http
 
 import (
 	"log/slog"
@@ -6,16 +6,16 @@ import (
 	"strings"
 	"time"
 
-	healthhandler "github.com/bosscloud/bosscloud/services/gateway/internal/adapter/http/health"
-	gwmiddleware "github.com/bosscloud/bosscloud/services/gateway/internal/adapter/http/middleware"
-	"github.com/bosscloud/bosscloud/services/gateway/internal/config"
-	domainhealth "github.com/bosscloud/bosscloud/services/gateway/internal/domain/health"
+	healthhandler "github.com/vpsflow/vpsflow/services/gateway/internal/adapter/http/health"
+	gwmiddleware "github.com/vpsflow/vpsflow/services/gateway/internal/adapter/http/middleware"
+	"github.com/vpsflow/vpsflow/services/gateway/internal/config"
+	domainhealth "github.com/vpsflow/vpsflow/services/gateway/internal/domain/health"
 	"github.com/gofiber/fiber/v2"
 	"github.com/gofiber/fiber/v2/middleware/proxy"
 	"github.com/gofiber/fiber/v2/middleware/recover"
 	"github.com/google/uuid"
 	"github.com/prometheus/client_golang/prometheus/promhttp"
-	"github.com/bosscloud/bosscloud/libs/go/security/jwt"
+	"github.com/vpsflow/vpsflow/libs/go/security/jwt"
 	"go.opentelemetry.io/otel"
 	"go.opentelemetry.io/otel/attribute"
 	"github.com/valyala/fasthttp/fasthttpadaptor"

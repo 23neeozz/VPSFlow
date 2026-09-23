@@ -1,9 +1,9 @@
-#!/usr/bin/env bash
+﻿#!/usr/bin/env bash
 set -euo pipefail
 
 ROOT="$(cd "$(dirname "$0")/.." && pwd)"
 
-echo "BossCloud Development Setup"
+echo "VPSFlow Development Setup"
 echo "==========================="
 
 if ! command -v go &> /dev/null; then

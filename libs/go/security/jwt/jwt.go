@@ -1,14 +1,14 @@
-package jwt
+﻿package jwt
 
 import (
 	"fmt"
 	"time"
 
-	"github.com/bosscloud/bosscloud/libs/go/errors"
+	"github.com/vpsflow/vpsflow/libs/go/errors"
 	jwtlib "github.com/golang-jwt/jwt/v5"
 )
 
-// Claims represents BossCloud JWT access token claims.
+// Claims represents VPSFlow JWT access token claims.
 type Claims struct {
 	UserID    string `json:"sub"`
 	SessionID string `json:"sid"`
@@ -35,10 +35,10 @@ func NewService(cfg Config) (*Service, error) {
 		return nil, fmt.Errorf("signing key must be at least 32 bytes")
 	}
 	if cfg.Issuer == "" {
-		cfg.Issuer = "bosscloud"
+		cfg.Issuer = "vpsflow"
 	}
 	if cfg.Audience == "" {
-		cfg.Audience = "bosscloud-api"
+		cfg.Audience = "vpsflow-api"
 	}
 	if cfg.AccessTTL <= 0 {
 		cfg.AccessTTL = 15 * time.Minute

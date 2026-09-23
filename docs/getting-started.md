@@ -1,4 +1,4 @@
-# Getting Started
+﻿# Getting Started
 
 ## Prerequisites
 
@@ -9,8 +9,8 @@
 ## 1. Clone and Configure
 
 ```bash
-git clone <repository-url> bosscloud
-cd bosscloud
+git clone <repository-url> vpsflow
+cd vpsflow
 cp .env.example .env
 ```
 
@@ -26,7 +26,7 @@ This starts:
 - NATS JetStream (port 4222)
 - MinIO (ports 9000/9001)
 - Prometheus (port 9090)
-- Grafana (port 3001, admin/bosscloud_dev)
+- Grafana (port 3001, admin/vpsflow_dev)
 - OpenTelemetry Collector (ports 4317/4318)
 
 ## 3. Run Services
@@ -50,7 +50,7 @@ curl http://localhost:8080/api/v1
 # Register via gateway proxy
 curl -X POST http://localhost:8080/api/v1/auth/register \
   -H "Content-Type: application/json" \
-  -d '{"email":"admin@bosscloud.local","password":"SecurePass123!","name":"Admin"}'
+  -d '{"email":"admin@vpsflow.local","password":"SecurePass123!","name":"Admin"}'
 ```
 
 ## 5. Run Tests

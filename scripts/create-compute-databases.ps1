@@ -1,4 +1,4 @@
-# Create BossCloud PostgreSQL databases (Windows)
+﻿# Create VPSFlow PostgreSQL databases (Windows)
 
 $psql = "C:\Program Files\PostgreSQL\18\bin\psql.exe"
 if (-not (Test-Path $psql)) {
@@ -7,15 +7,15 @@ if (-not (Test-Path $psql)) {
 }
 
 $databases = @(
-    "bosscloud_cluster",
-    "bosscloud_vm",
-    "bosscloud_agent_control",
-    "bosscloud_console"
+    "vpsflow_cluster",
+    "vpsflow_vm",
+    "vpsflow_agent_control",
+    "vpsflow_console"
 )
 
 foreach ($db in $databases) {
     Write-Host "Creating database $db..." -ForegroundColor Yellow
-    & $psql -U bosscloud -h localhost -c "CREATE DATABASE $db OWNER bosscloud;" 2>$null
+    & $psql -U vpsflow -h localhost -c "CREATE DATABASE $db OWNER vpsflow;" 2>$null
     if ($LASTEXITCODE -eq 0) {
         Write-Host "  OK" -ForegroundColor Green
     } else {

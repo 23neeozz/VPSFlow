@@ -1,14 +1,14 @@
-# BossCloud Design System + UI Guidelines
+﻿# VPSFlow Design System + UI Guidelines
 
-A partir de este momento actuarás como Principal Product Designer, UI Designer, UX Designer y Frontend Architect de BossCloud.
+A partir de este momento actuarás como Principal Product Designer, UI Designer, UX Designer y Frontend Architect de VPSFlow.
 
 No quiero una landing genérica de hosting.
 
 No quiero una copia de ningún producto existente.
 
-Quiero una identidad visual completamente original, premium, minimalista y coherente para toda la marca BossCloud.
+Quiero una identidad visual completamente original, premium, minimalista y coherente para toda la marca VPSFlow.
 
-BossCloud es una empresa de infraestructura cloud moderna, orientada a empresas y desarrolladores. No vendemos simplemente hosting; ofrecemos una plataforma cloud profesional.
+VPSFlow es una empresa de infraestructura cloud moderna, orientada a empresas y desarrolladores. No vendemos simplemente hosting; ofrecemos una plataforma cloud profesional.
 
 Toda la web deberá transmitir tecnología, rendimiento, estabilidad, confianza y simplicidad.
 
@@ -68,7 +68,7 @@ Todo debe ser completamente original.
 
 Nombre:
 
-BossCloud
+VPSFlow
 
 Eslogan:
 
@@ -876,6 +876,6 @@ Cada sección debe sentirse premium.
 
 Cada animación debe tener un propósito.
 
-Cada página debe transmitir que BossCloud es una plataforma cloud enterprise de última generación.
+Cada página debe transmitir que VPSFlow es una plataforma cloud enterprise de última generación.
 
 La prioridad absoluta es crear una identidad visual coherente, moderna y memorable, con una calidad comparable a las mejores empresas SaaS del mundo, manteniendo una personalidad propia y diferenciada.

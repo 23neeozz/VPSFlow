@@ -1,10 +1,10 @@
-package config
+﻿package config
 
 import (
 	"fmt"
 	"time"
 
-	libconfig "github.com/bosscloud/bosscloud/libs/go/config"
+	libconfig "github.com/vpsflow/vpsflow/libs/go/config"
 )
 
 type Config struct {
@@ -46,13 +46,13 @@ func Load() (Config, error) {
 		ServiceName:       libconfig.String("VPS_SERVICE_NAME", "vps"),
 		ServiceVersion:    libconfig.String("VPS_SERVICE_VERSION", "0.1.0"),
 		OTLPEndpoint:      libconfig.String("OTEL_EXPORTER_OTLP_ENDPOINT", ""),
-		DatabaseURL:       libconfig.String("VPS_DATABASE_URL", "postgres://bosscloud:bosscloud_dev@localhost:5432/bosscloud_vps?sslmode=disable"),
+		DatabaseURL:       libconfig.String("VPS_DATABASE_URL", "postgres://vpsflow:vpsflow_dev@localhost:5432/vpsflow_vps?sslmode=disable"),
 		VMServiceURL:      libconfig.String("VM_SERVICE_URL", "http://127.0.0.1:8085"),
 		ConsoleServiceURL: libconfig.String("CONSOLE_SERVICE_URL", "http://127.0.0.1:8087"),
 		TenantServiceURL:  libconfig.String("TENANT_SERVICE_URL", "http://127.0.0.1:8083"),
 		JWTSigningKey:     libconfig.String("JWT_SIGNING_KEY", ""),
-		JWTIssuer:         libconfig.String("JWT_ISSUER", "bosscloud"),
-		JWTAudience:       libconfig.String("JWT_AUDIENCE", "bosscloud-api"),
+		JWTIssuer:         libconfig.String("JWT_ISSUER", "vpsflow"),
+		JWTAudience:       libconfig.String("JWT_AUDIENCE", "vpsflow-api"),
 		ShutdownTimeout:   libconfig.Duration("VPS_SHUTDOWN_TIMEOUT", 15*time.Second),
 		ReadTimeout:       libconfig.Duration("VPS_READ_TIMEOUT", 30*time.Second),
 		WriteTimeout:      libconfig.Duration("VPS_WRITE_TIMEOUT", 30*time.Second),

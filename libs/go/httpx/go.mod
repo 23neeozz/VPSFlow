@@ -1,9 +1,9 @@
-module github.com/bosscloud/bosscloud/libs/go/httpx
+﻿module github.com/vpsflow/vpsflow/libs/go/httpx
 
 go 1.23.0
 
 require (
-	github.com/bosscloud/bosscloud/libs/go/errors v0.0.0
+	github.com/vpsflow/vpsflow/libs/go/errors v0.0.0
 	github.com/gofiber/fiber/v2 v2.52.6
 )
 
@@ -21,4 +21,4 @@ require (
 	golang.org/x/sys v0.28.0 // indirect
 )
 
-replace github.com/bosscloud/bosscloud/libs/go/errors => ../errors
+replace github.com/vpsflow/vpsflow/libs/go/errors => ../errors

@@ -1,4 +1,4 @@
-package main
+﻿package main
 
 import (
 	"context"
@@ -7,8 +7,8 @@ import (
 	"os/signal"
 	"syscall"
 
-	"github.com/bosscloud/bosscloud/agents/hypervisor-agent/internal/agent"
-	libconfig "github.com/bosscloud/bosscloud/libs/go/config"
+	"github.com/vpsflow/vpsflow/agents/hypervisor-agent/internal/agent"
+	libconfig "github.com/vpsflow/vpsflow/libs/go/config"
 )
 
 func main() {

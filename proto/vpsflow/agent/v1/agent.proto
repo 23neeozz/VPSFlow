@@ -1,10 +1,10 @@
-syntax = "proto3";
+﻿syntax = "proto3";
 
-package bosscloud.agent.v1;
+package vpsflow.agent.v1;
 
-option go_package = "github.com/bosscloud/bosscloud/proto/bosscloud/agent/v1;agentv1";
+option go_package = "github.com/vpsflow/vpsflow/proto/vpsflow/agent/v1;agentv1";
 
-import "bosscloud/common/v1/common.proto";
+import "vpsflow/common/v1/common.proto";
 
 // AgentControlService manages hypervisor agent connections and command dispatch.
 service AgentControlService {
@@ -41,7 +41,7 @@ message ExecuteCommandRequest {
   string hypervisor_id = 2;
   CommandType type = 3;
   bytes payload = 4;
-  bosscloud.common.v1.TenantContext tenant = 5;
+  vpsflow.common.v1.TenantContext tenant = 5;
 }
 
 message ExecuteCommandResponse {

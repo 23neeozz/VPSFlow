@@ -1,10 +1,10 @@
-package config
+﻿package config
 
 import (
 	"fmt"
 	"time"
 
-	libconfig "github.com/bosscloud/bosscloud/libs/go/config"
+	libconfig "github.com/vpsflow/vpsflow/libs/go/config"
 )
 
 type Config struct {
@@ -44,7 +44,7 @@ func Load() (Config, error) {
 		ServiceName:     libconfig.String("AGENT_CONTROL_SERVICE_NAME", "agent-control"),
 		ServiceVersion:  libconfig.String("AGENT_CONTROL_SERVICE_VERSION", "0.1.0"),
 		OTLPEndpoint:    libconfig.String("OTEL_EXPORTER_OTLP_ENDPOINT", ""),
-		DatabaseURL:     libconfig.String("AGENT_CONTROL_DATABASE_URL", "postgres://bosscloud:bosscloud_dev@localhost:5432/bosscloud_agent_control?sslmode=disable"),
+		DatabaseURL:     libconfig.String("AGENT_CONTROL_DATABASE_URL", "postgres://vpsflow:vpsflow_dev@localhost:5432/vpsflow_agent_control?sslmode=disable"),
 		ClusterURL:      libconfig.String("CLUSTER_SERVICE_URL", "http://127.0.0.1:8084"),
 		InternalAPIKey:  libconfig.String("INTERNAL_API_KEY", "dev-internal-api-key"),
 		CommandTimeout:  libconfig.Duration("AGENT_CONTROL_COMMAND_TIMEOUT", 2*time.Minute),

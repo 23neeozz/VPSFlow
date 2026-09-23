@@ -1,4 +1,4 @@
-package tenantclient
+﻿package tenantclient
 
 import (
 	"context"
@@ -8,7 +8,7 @@ import (
 	"strings"
 	"time"
 
-	apperrors "github.com/bosscloud/bosscloud/libs/go/errors"
+	apperrors "github.com/vpsflow/vpsflow/libs/go/errors"
 )
 
 type HTTPClient struct {

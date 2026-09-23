@@ -1,13 +1,13 @@
-package postgres
+﻿package postgres
 
 import (
 	"context"
 	"errors"
 	"time"
 
-	apperrors "github.com/bosscloud/bosscloud/libs/go/errors"
-	"github.com/bosscloud/bosscloud/libs/go/ids"
-	"github.com/bosscloud/bosscloud/services/auth/internal/domain"
+	apperrors "github.com/vpsflow/vpsflow/libs/go/errors"
+	"github.com/vpsflow/vpsflow/libs/go/ids"
+	"github.com/vpsflow/vpsflow/services/auth/internal/domain"
 	"github.com/jackc/pgx/v5"
 	"github.com/jackc/pgx/v5/pgconn"
 	"github.com/jackc/pgx/v5/pgxpool"

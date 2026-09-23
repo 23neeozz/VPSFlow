@@ -1,4 +1,4 @@
-package agent
+﻿package agent
 
 import (
 	"context"
@@ -6,9 +6,9 @@ import (
 	"log/slog"
 	"time"
 
-	"github.com/bosscloud/bosscloud/agents/hypervisor-agent/internal/controlclient"
-	"github.com/bosscloud/bosscloud/agents/hypervisor-agent/internal/executor"
-	"github.com/bosscloud/bosscloud/libs/go/agentprotocol"
+	"github.com/vpsflow/vpsflow/agents/hypervisor-agent/internal/controlclient"
+	"github.com/vpsflow/vpsflow/agents/hypervisor-agent/internal/executor"
+	"github.com/vpsflow/vpsflow/libs/go/agentprotocol"
 	"github.com/google/uuid"
 )
 

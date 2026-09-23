@@ -1,10 +1,10 @@
-openapi: 3.1.0
+﻿openapi: 3.1.0
 info:
-  title: BossCloud Gateway API
+  title: VPSFlow Gateway API
   version: 1.0.0
-  description: Public API gateway for BossCloud platform.
+  description: Public API gateway for VPSFlow platform.
   contact:
-    name: BossCloud Engineering
+    name: VPSFlow Engineering
 
 servers:
   - url: http://localhost:8080/api/v1

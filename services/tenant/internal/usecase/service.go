@@ -1,14 +1,14 @@
-package usecase
+﻿package usecase
 
 import (
 	"context"
 	"regexp"
 	"strings"
 
-	"github.com/bosscloud/bosscloud/libs/go/errors"
-	"github.com/bosscloud/bosscloud/libs/go/ids"
-	"github.com/bosscloud/bosscloud/services/tenant/internal/domain"
-	"github.com/bosscloud/bosscloud/services/tenant/internal/port"
+	"github.com/vpsflow/vpsflow/libs/go/errors"
+	"github.com/vpsflow/vpsflow/libs/go/ids"
+	"github.com/vpsflow/vpsflow/services/tenant/internal/domain"
+	"github.com/vpsflow/vpsflow/services/tenant/internal/port"
 )
 
 type Service struct {

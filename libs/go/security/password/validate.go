@@ -1,13 +1,13 @@
-package password
+﻿package password
 
 import (
 	"strings"
 	"unicode"
 
-	"github.com/bosscloud/bosscloud/libs/go/errors"
+	"github.com/vpsflow/vpsflow/libs/go/errors"
 )
 
-// Validate enforces BossCloud password policy.
+// Validate enforces VPSFlow password policy.
 func Validate(password string) error {
 	if len(password) < 12 {
 		return errors.New(errors.CodeValidation, "password must be at least 12 characters")

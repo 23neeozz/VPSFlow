@@ -1,11 +1,11 @@
-package postgres
+﻿package postgres
 
 import (
 	"database/sql"
 	"errors"
 	"fmt"
 
-	"github.com/bosscloud/bosscloud/services/vps/migrations"
+	"github.com/vpsflow/vpsflow/services/vps/migrations"
 	"github.com/golang-migrate/migrate/v4"
 	"github.com/golang-migrate/migrate/v4/database/postgres"
 	"github.com/golang-migrate/migrate/v4/source/iofs"

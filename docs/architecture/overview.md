@@ -1,8 +1,8 @@
-# BossCloud Architecture Overview
+﻿# VPSFlow Architecture Overview
 
 ## Vision
 
-BossCloud is an enterprise cloud infrastructure platform for managing KVM virtualization at scale. It provides a modern control plane with secure multi-tenant operations, event-driven microservices, and hypervisor agents on every KVM node.
+VPSFlow is an enterprise cloud infrastructure platform for managing KVM virtualization at scale. It provides a modern control plane with secure multi-tenant operations, event-driven microservices, and hypervisor agents on every KVM node.
 
 ## High-Level Architecture
 
@@ -100,7 +100,7 @@ flowchart TB
 
 ### Asynchronous
 - Domain events via NATS JetStream
-- Event naming: `bosscloud.<context>.<entity>.<event>.v1`
+- Event naming: `vpsflow.<context>.<entity>.<event>.v1`
 - At-least-once delivery with idempotent consumers
 - Transactional outbox per service
 

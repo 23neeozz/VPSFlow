@@ -1,4 +1,4 @@
-# ADR-003: API Versioning Strategy
+﻿# ADR-003: API Versioning Strategy
 
 ## Status
 
@@ -6,7 +6,7 @@ Accepted
 
 ## Context
 
-BossCloud exposes public REST APIs to customers and SDK/CLI integrations. We need a versioning strategy that allows evolution without breaking consumers.
+VPSFlow exposes public REST APIs to customers and SDK/CLI integrations. We need a versioning strategy that allows evolution without breaking consumers.
 
 ## Decision
 

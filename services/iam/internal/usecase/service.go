@@ -1,13 +1,13 @@
-package usecase
+﻿package usecase
 
 import (
 	"context"
 	"strings"
 
-	"github.com/bosscloud/bosscloud/libs/go/errors"
-	"github.com/bosscloud/bosscloud/libs/go/ids"
-	"github.com/bosscloud/bosscloud/services/iam/internal/domain"
-	"github.com/bosscloud/bosscloud/services/iam/internal/port"
+	"github.com/vpsflow/vpsflow/libs/go/errors"
+	"github.com/vpsflow/vpsflow/libs/go/ids"
+	"github.com/vpsflow/vpsflow/services/iam/internal/domain"
+	"github.com/vpsflow/vpsflow/services/iam/internal/port"
 )
 
 // Service orchestrates IAM operations.

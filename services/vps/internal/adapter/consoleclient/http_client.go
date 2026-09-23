@@ -1,4 +1,4 @@
-package consoleclient
+﻿package consoleclient
 
 import (
 	"bytes"
@@ -8,8 +8,8 @@ import (
 	"net/http"
 	"time"
 
-	apperrors "github.com/bosscloud/bosscloud/libs/go/errors"
-	"github.com/bosscloud/bosscloud/services/vps/internal/domain"
+	apperrors "github.com/vpsflow/vpsflow/libs/go/errors"
+	"github.com/vpsflow/vpsflow/services/vps/internal/domain"
 )
 
 type HTTPClient struct {

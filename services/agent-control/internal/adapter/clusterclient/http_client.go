@@ -1,4 +1,4 @@
-package clusterclient
+﻿package clusterclient
 
 import (
 	"bytes"
@@ -9,8 +9,8 @@ import (
 	"net/http"
 	"time"
 
-	"github.com/bosscloud/bosscloud/libs/go/agentprotocol"
-	apperrors "github.com/bosscloud/bosscloud/libs/go/errors"
+	"github.com/vpsflow/vpsflow/libs/go/agentprotocol"
+	apperrors "github.com/vpsflow/vpsflow/libs/go/errors"
 )
 
 type HTTPClient struct {

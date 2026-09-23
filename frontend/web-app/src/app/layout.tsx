@@ -10,8 +10,8 @@ const jakarta = Plus_Jakarta_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "Panel — Infraestructura de hosting",
-  description: "Panel de gestión de VPS e infraestructura para proveedores de hosting.",
+  title: "VPSFlow — Infraestructura Cloud y VPS",
+  description: "Panel de gestión de VPS e infraestructura cloud VPSFlow.",
   icons: { icon: "/img/favicon.ico" },
 };
 

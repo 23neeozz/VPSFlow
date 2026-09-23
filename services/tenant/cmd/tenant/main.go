@@ -1,4 +1,4 @@
-package main
+﻿package main
 
 import (
 	"context"
@@ -7,13 +7,13 @@ import (
 	"os/signal"
 	"syscall"
 
-	httpserver "github.com/bosscloud/bosscloud/services/tenant/internal/adapter/http"
-	iamclient "github.com/bosscloud/bosscloud/services/tenant/internal/adapter/iamclient"
-	"github.com/bosscloud/bosscloud/services/tenant/internal/adapter/repository/postgres"
-	"github.com/bosscloud/bosscloud/services/tenant/internal/config"
-	"github.com/bosscloud/bosscloud/services/tenant/internal/usecase"
-	"github.com/bosscloud/bosscloud/libs/go/observability"
-	"github.com/bosscloud/bosscloud/libs/go/security/jwt"
+	httpserver "github.com/vpsflow/vpsflow/services/tenant/internal/adapter/http"
+	iamclient "github.com/vpsflow/vpsflow/services/tenant/internal/adapter/iamclient"
+	"github.com/vpsflow/vpsflow/services/tenant/internal/adapter/repository/postgres"
+	"github.com/vpsflow/vpsflow/services/tenant/internal/config"
+	"github.com/vpsflow/vpsflow/services/tenant/internal/usecase"
+	"github.com/vpsflow/vpsflow/libs/go/observability"
+	"github.com/vpsflow/vpsflow/libs/go/security/jwt"
 	"github.com/jackc/pgx/v5/pgxpool"
 )
 

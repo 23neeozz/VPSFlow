@@ -1,12 +1,12 @@
-package agent
+﻿package agent
 
 import (
 	"time"
 
-	"github.com/bosscloud/bosscloud/libs/go/agentprotocol"
-	"github.com/bosscloud/bosscloud/libs/go/errors"
-	"github.com/bosscloud/bosscloud/libs/go/httpx"
-	"github.com/bosscloud/bosscloud/services/agent-control/internal/usecase"
+	"github.com/vpsflow/vpsflow/libs/go/agentprotocol"
+	"github.com/vpsflow/vpsflow/libs/go/errors"
+	"github.com/vpsflow/vpsflow/libs/go/httpx"
+	"github.com/vpsflow/vpsflow/services/agent-control/internal/usecase"
 	"github.com/gofiber/fiber/v2"
 )
 

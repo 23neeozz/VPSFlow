@@ -1,6 +1,6 @@
-# Auth Service
+﻿# Auth Service
 
-Authentication and session management for BossCloud.
+Authentication and session management for VPSFlow.
 
 ## Endpoints
 
@@ -45,7 +45,7 @@ Gateway proxies `/api/v1/auth/*` to this service when `AUTH_SERVICE_URL` is conf
 ```bash
 curl -X POST http://localhost:8080/api/v1/auth/register \
   -H "Content-Type: application/json" \
-  -d '{"email":"admin@bosscloud.local","password":"SecurePass123!","name":"Admin"}'
+  -d '{"email":"admin@vpsflow.local","password":"SecurePass123!","name":"Admin"}'
 ```
 
 ## Contract

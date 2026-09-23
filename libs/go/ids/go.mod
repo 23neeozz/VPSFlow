@@ -1,4 +1,4 @@
-module github.com/bosscloud/bosscloud/libs/go/ids
+﻿module github.com/vpsflow/vpsflow/libs/go/ids
 
 go 1.23.0
 

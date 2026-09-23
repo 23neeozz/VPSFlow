@@ -1,8 +1,8 @@
-syntax = "proto3";
+﻿syntax = "proto3";
 
-package bosscloud.common.v1;
+package vpsflow.common.v1;
 
-option go_package = "github.com/bosscloud/bosscloud/proto/bosscloud/common/v1;commonv1";
+option go_package = "github.com/vpsflow/vpsflow/proto/vpsflow/common/v1;commonv1";
 
 // PaginationRequest defines cursor-based pagination parameters.
 message PaginationRequest {

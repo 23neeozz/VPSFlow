@@ -1,4 +1,4 @@
-# Quality Gates
+﻿# Quality Gates
 
 Mandatory quality checkpoints enforced at every stage of development. No code merges or releases without passing all applicable gates.
 
@@ -80,7 +80,7 @@ Every service must have:
 |---------------|----------|------------|
 | OpenAPI (REST) | `contracts/openapi/` | Swagger validate in CI |
 | AsyncAPI (Events) | `contracts/asyncapi/` | Manual review + lint |
-| Protobuf (gRPC) | `proto/bosscloud/` | `buf lint` (future) |
+| Protobuf (gRPC) | `proto/vpsflow/` | `buf lint` (future) |
 
 ### Contract Change Rules
 

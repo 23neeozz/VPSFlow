@@ -1,4 +1,4 @@
-package domain
+﻿package domain
 
 import "time"
 
@@ -7,7 +7,7 @@ const (
 	UserStatusDisabled = "disabled"
 )
 
-// User represents a global BossCloud identity.
+// User represents a global VPSFlow identity.
 type User struct {
 	ID            string
 	Email         string

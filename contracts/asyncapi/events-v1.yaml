@@ -1,8 +1,8 @@
-asyncapi: 3.0.0
+﻿asyncapi: 3.0.0
 info:
-  title: BossCloud Domain Events
+  title: VPSFlow Domain Events
   version: 1.0.0
-  description: Event bus contracts for BossCloud platform.
+  description: Event bus contracts for VPSFlow platform.
 
 servers:
   nats:
@@ -11,14 +11,14 @@ servers:
     description: NATS JetStream development broker
 
 channels:
-  bosscloud.platform.service.started.v1:
-    address: bosscloud.platform.service.started.v1
+  vpsflow.platform.service.started.v1:
+    address: vpsflow.platform.service.started.v1
     messages:
       ServiceStarted:
         $ref: "#/components/messages/ServiceStarted"
 
-  bosscloud.auth.user.authenticated.v1:
-    address: bosscloud.auth.user.authenticated.v1
+  vpsflow.auth.user.authenticated.v1:
+    address: vpsflow.auth.user.authenticated.v1
     messages:
       UserAuthenticated:
         $ref: "#/components/messages/UserAuthenticated"

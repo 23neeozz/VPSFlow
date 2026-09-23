@@ -1,4 +1,4 @@
-# Agent Control Service
+﻿# Agent Control Service
 
 Secure command channel between control plane and hypervisor agents.
 
@@ -8,4 +8,4 @@ See [Compute Architecture](../../docs/architecture/compute.md) for full specific
 
 ## gRPC Contract
 
-- [agent.proto](../../proto/bosscloud/agent/v1/agent.proto)
+- [agent.proto](../../proto/vpsflow/agent/v1/agent.proto)

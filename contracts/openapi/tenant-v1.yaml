@@ -1,8 +1,8 @@
-openapi: 3.1.0
+﻿openapi: 3.1.0
 info:
-  title: BossCloud Tenant API
+  title: VPSFlow Tenant API
   version: 1.0.0
-  description: Organization and project management for BossCloud.
+  description: Organization and project management for VPSFlow.
 
 servers:
   - url: http://localhost:8080/api/v1

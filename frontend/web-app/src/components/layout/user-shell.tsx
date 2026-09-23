@@ -41,7 +41,7 @@ export function UserShell({
           <LogoMark />
           <div className="min-w-0">
             <p className="truncate text-sm font-semibold text-bc-text-primary">
-              Panel
+              VPSFlow
             </p>
             <p className="truncate text-[11px] text-bc-text-tertiary">
               Panel de cliente

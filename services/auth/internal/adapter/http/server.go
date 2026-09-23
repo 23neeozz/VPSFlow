@@ -1,15 +1,15 @@
-package http
+﻿package http
 
 import (
 	"log/slog"
 	"net/http"
 	"time"
 
-	authhandler "github.com/bosscloud/bosscloud/services/auth/internal/adapter/http/auth"
-	"github.com/bosscloud/bosscloud/services/auth/internal/config"
-	"github.com/bosscloud/bosscloud/services/auth/internal/domain/health"
-	healthhandler "github.com/bosscloud/bosscloud/services/auth/internal/adapter/http/health"
-	"github.com/bosscloud/bosscloud/services/auth/internal/usecase"
+	authhandler "github.com/vpsflow/vpsflow/services/auth/internal/adapter/http/auth"
+	"github.com/vpsflow/vpsflow/services/auth/internal/config"
+	"github.com/vpsflow/vpsflow/services/auth/internal/domain/health"
+	healthhandler "github.com/vpsflow/vpsflow/services/auth/internal/adapter/http/health"
+	"github.com/vpsflow/vpsflow/services/auth/internal/usecase"
 	"github.com/gofiber/fiber/v2"
 	"github.com/gofiber/fiber/v2/middleware/recover"
 	"github.com/google/uuid"

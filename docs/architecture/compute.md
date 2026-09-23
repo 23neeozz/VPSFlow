@@ -1,8 +1,8 @@
-# Compute Control Plane Architecture
+﻿# Compute Control Plane Architecture
 
 ## Overview
 
-The compute layer manages virtual machine lifecycle across a fleet of KVM hypervisors. Each hypervisor runs a BossCloud Agent that executes Libvirt/QEMU operations under command from the control plane.
+The compute layer manages virtual machine lifecycle across a fleet of KVM hypervisors. Each hypervisor runs a VPSFlow Agent that executes Libvirt/QEMU operations under command from the control plane.
 
 ```mermaid
 sequenceDiagram
@@ -24,7 +24,7 @@ sequenceDiagram
     Libvirt-->>Agent: domain created
     Agent-->>AgentControl: CommandResult
     AgentControl-->>VM: success
-    VM->>EventBus: bosscloud.vm.instance.created.v1
+    VM->>EventBus: vpsflow.vm.instance.created.v1
     VM-->>Gateway: VirtualMachine
     Gateway-->>Client: 201 Created
 ```
@@ -39,7 +39,7 @@ sequenceDiagram
 - Node metadata (CPU, RAM, storage pools, network bridges)
 - Maintenance mode and draining
 
-**Database**: `bosscloud_cluster`
+**Database**: `vpsflow_cluster`
 
 **Key tables**:
 - `hypervisors` — registered KVM nodes
@@ -74,7 +74,7 @@ sequenceDiagram
 - Operation idempotency via `idempotency_key`
 - Status tracking and event publication
 
-**Database**: `bosscloud_vm`
+**Database**: `vpsflow_vm`
 
 **State machine**:
 ```
@@ -135,7 +135,7 @@ running → reinstalling → running
 
 ## Hypervisor Agent
 
-### bosscloud-agent
+### vpsflow-agent
 
 Deployed as systemd service on every KVM node.
 
@@ -168,7 +168,7 @@ agents/hypervisor-agent/
 
 ### Agent Security
 
-- Agent certificate signed by BossCloud internal CA
+- Agent certificate signed by VPSFlow internal CA
 - Certificate rotation every 90 days (automated)
 - Agent identity bound to `hypervisor_id`
 - Commands validated against agent's registered hypervisor
@@ -176,7 +176,7 @@ agents/hypervisor-agent/
 
 ### Agent Protocol (gRPC)
 
-See [agent.proto](../../proto/bosscloud/agent/v1/agent.proto)
+See [agent.proto](../../proto/vpsflow/agent/v1/agent.proto)
 
 ## Idempotency Model
 
@@ -197,14 +197,14 @@ Headers:
 
 | Event | Trigger |
 |-------|---------|
-| `bosscloud.vm.instance.created.v1` | VM provisioned successfully |
-| `bosscloud.vm.instance.started.v1` | VM started |
-| `bosscloud.vm.instance.stopped.v1` | VM stopped |
-| `bosscloud.vm.instance.deleted.v1` | VM deleted |
-| `bosscloud.vm.instance.error.v1` | VM entered error state |
-| `bosscloud.cluster.hypervisor.registered.v1` | New hypervisor joined |
-| `bosscloud.migration.started.v1` | Migration initiated |
-| `bosscloud.migration.completed.v1` | Migration finished |
+| `vpsflow.vm.instance.created.v1` | VM provisioned successfully |
+| `vpsflow.vm.instance.started.v1` | VM started |
+| `vpsflow.vm.instance.stopped.v1` | VM stopped |
+| `vpsflow.vm.instance.deleted.v1` | VM deleted |
+| `vpsflow.vm.instance.error.v1` | VM entered error state |
+| `vpsflow.cluster.hypervisor.registered.v1` | New hypervisor joined |
+| `vpsflow.migration.started.v1` | Migration initiated |
+| `vpsflow.migration.completed.v1` | Migration finished |
 
 ## Sprint 3-4 Implementation Order
 

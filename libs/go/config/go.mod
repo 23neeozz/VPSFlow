@@ -1,4 +1,4 @@
-module github.com/bosscloud/bosscloud/libs/go/config
+﻿module github.com/vpsflow/vpsflow/libs/go/config
 
 go 1.23.0
 

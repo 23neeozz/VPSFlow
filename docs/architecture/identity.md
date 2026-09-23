@@ -1,8 +1,8 @@
-# Identity & Tenancy Architecture
+﻿# Identity & Tenancy Architecture
 
 ## Overview
 
-The identity layer provides authentication, authorization, and multi-tenant isolation for all BossCloud services. It consists of four core services deployed in Sprint 1-2.
+The identity layer provides authentication, authorization, and multi-tenant isolation for all VPSFlow services. It consists of four core services deployed in Sprint 1-2.
 
 ```mermaid
 sequenceDiagram
@@ -19,7 +19,7 @@ sequenceDiagram
     IAM-->>Auth: permissions[]
     Auth-->>Gateway: access_token + refresh_token
     Gateway-->>Client: 200 OK
-    Auth->>EventBus: bosscloud.auth.user.authenticated.v1
+    Auth->>EventBus: vpsflow.auth.user.authenticated.v1
 ```
 
 ## Services
@@ -46,7 +46,7 @@ sequenceDiagram
 - Session management and revocation
 - Password hashing (argon2id)
 
-**Database**: `bosscloud_auth`
+**Database**: `vpsflow_auth`
 
 **Key tables**:
 - `users` — global user identity
@@ -58,10 +58,10 @@ sequenceDiagram
 - `outbox_events` — transactional event publication
 
 **Events published**:
-- `bosscloud.auth.user.registered.v1`
-- `bosscloud.auth.user.authenticated.v1`
-- `bosscloud.auth.user.mfa_enabled.v1`
-- `bosscloud.auth.session.revoked.v1`
+- `vpsflow.auth.user.registered.v1`
+- `vpsflow.auth.user.authenticated.v1`
+- `vpsflow.auth.user.mfa_enabled.v1`
+- `vpsflow.auth.session.revoked.v1`
 
 ### iam
 
@@ -72,7 +72,7 @@ sequenceDiagram
 - Permission caching with event-driven invalidation
 - Service account management
 
-**Database**: `bosscloud_iam`
+**Database**: `vpsflow_iam`
 
 **Key tables**:
 - `roles` — role definitions per tenant
@@ -117,7 +117,7 @@ audit.read, admin.hypervisors.manage
 - Tenant quotas and limits
 - Tenant-level settings
 
-**Database**: `bosscloud_tenant`
+**Database**: `vpsflow_tenant`
 
 **Key tables**:
 - `organizations` — tenant entities
@@ -162,7 +162,7 @@ type TenantContext struct {
 1. Client redirects to Auth `/oauth/authorize`
 2. Auth redirects to OIDC provider
 3. Callback validates ID token
-4. Create/link user, issue BossCloud JWT
+4. Create/link user, issue VPSFlow JWT
 5. Same permission resolution as password flow
 
 ### API Key Authentication
@@ -179,8 +179,8 @@ type TenantContext struct {
   "tenant_id": "org_01HXYZ...",
   "project_id": "prj_01HXYZ...",
   "permissions": ["vm.create", "vm.read", "network.read"],
-  "iss": "bosscloud",
-  "aud": "bosscloud-api",
+  "iss": "vpsflow",
+  "aud": "vpsflow-api",
   "exp": 1710000000,
   "iat": 1709999100,
   "jti": "tok_01HXYZ..."
@@ -190,9 +190,9 @@ type TenantContext struct {
 ## gRPC Internal Contracts
 
 See:
-- [auth.proto](../../proto/bosscloud/auth/v1/auth.proto)
-- [iam.proto](../../proto/bosscloud/iam/v1/iam.proto)
-- [tenant.proto](../../proto/bosscloud/tenant/v1/tenant.proto)
+- [auth.proto](../../proto/vpsflow/auth/v1/auth.proto)
+- [iam.proto](../../proto/vpsflow/iam/v1/iam.proto)
+- [tenant.proto](../../proto/vpsflow/tenant/v1/tenant.proto)
 
 ## REST Public Contracts
 

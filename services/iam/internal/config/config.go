@@ -1,10 +1,10 @@
-package config
+﻿package config
 
 import (
 	"fmt"
 	"time"
 
-	libconfig "github.com/bosscloud/bosscloud/libs/go/config"
+	libconfig "github.com/vpsflow/vpsflow/libs/go/config"
 )
 
 // Config holds iam service configuration.
@@ -46,10 +46,10 @@ func Load() (Config, error) {
 		ServiceName:     libconfig.String("IAM_SERVICE_NAME", "iam"),
 		ServiceVersion:  libconfig.String("IAM_SERVICE_VERSION", "0.1.0"),
 		OTLPEndpoint:    libconfig.String("OTEL_EXPORTER_OTLP_ENDPOINT", ""),
-		DatabaseURL:     libconfig.String("IAM_DATABASE_URL", "postgres://bosscloud:bosscloud_dev@localhost:5432/bosscloud_iam?sslmode=disable"),
+		DatabaseURL:     libconfig.String("IAM_DATABASE_URL", "postgres://vpsflow:vpsflow_dev@localhost:5432/vpsflow_iam?sslmode=disable"),
 		JWTSigningKey:   libconfig.String("JWT_SIGNING_KEY", ""),
-		JWTIssuer:       libconfig.String("JWT_ISSUER", "bosscloud"),
-		JWTAudience:     libconfig.String("JWT_AUDIENCE", "bosscloud-api"),
+		JWTIssuer:       libconfig.String("JWT_ISSUER", "vpsflow"),
+		JWTAudience:     libconfig.String("JWT_AUDIENCE", "vpsflow-api"),
 		ShutdownTimeout: libconfig.Duration("IAM_SHUTDOWN_TIMEOUT", 15*time.Second),
 		ReadTimeout:     libconfig.Duration("IAM_READ_TIMEOUT", 10*time.Second),
 		WriteTimeout:    libconfig.Duration("IAM_WRITE_TIMEOUT", 10*time.Second),

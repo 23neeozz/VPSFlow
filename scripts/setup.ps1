@@ -1,4 +1,4 @@
-# BossCloud Development Setup Script (Windows)
+﻿# VPSFlow Development Setup Script (Windows)
 
 param(
     [switch]$SkipInfra
@@ -7,7 +7,7 @@ param(
 $ErrorActionPreference = "Stop"
 $Root = Split-Path -Parent $PSScriptRoot
 
-Write-Host "BossCloud Development Setup" -ForegroundColor Cyan
+Write-Host "VPSFlow Development Setup" -ForegroundColor Cyan
 Write-Host "===========================" -ForegroundColor Cyan
 
 # Check Go
@@ -80,7 +80,7 @@ if (-not $SkipInfra) {
         Write-Host "Infrastructure started." -ForegroundColor Green
     } else {
         Write-Host "Docker not found. Skipping infrastructure startup." -ForegroundColor Yellow
-        Write-Host "Create PostgreSQL databases: bosscloud_cluster, bosscloud_vm, bosscloud_agent_control, bosscloud_console" -ForegroundColor Yellow
+        Write-Host "Create PostgreSQL databases: vpsflow_cluster, vpsflow_vm, vpsflow_agent_control, vpsflow_console" -ForegroundColor Yellow
     }
 }
 

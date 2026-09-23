@@ -1,5 +1,5 @@
-export const GATEWAY_URL =
-  process.env.BOSSCLOUD_GATEWAY_URL?.replace(/\/$/, "") || "http://127.0.0.1:8080";
+﻿export const GATEWAY_URL =
+  process.env.VPSFLOW_GATEWAY_URL?.replace(/\/$/, "") || "http://127.0.0.1:8080";
 
 export const ACCESS_COOKIE = "bc_access";
 export const REFRESH_COOKIE = "bc_refresh";

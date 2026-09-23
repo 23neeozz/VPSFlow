@@ -1,10 +1,10 @@
-package port
+﻿package port
 
 import (
 	"context"
 	"time"
 
-	"github.com/bosscloud/bosscloud/services/agent-control/internal/domain"
+	"github.com/vpsflow/vpsflow/services/agent-control/internal/domain"
 )
 
 type Repository interface {

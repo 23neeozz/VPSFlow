@@ -1,14 +1,14 @@
-package usecase_test
+﻿package usecase_test
 
 import (
 	"context"
 	"testing"
 	"time"
 
-	"github.com/bosscloud/bosscloud/libs/go/errors"
-	"github.com/bosscloud/bosscloud/libs/go/security/jwt"
-	"github.com/bosscloud/bosscloud/services/auth/internal/domain"
-	"github.com/bosscloud/bosscloud/services/auth/internal/usecase"
+	"github.com/vpsflow/vpsflow/libs/go/errors"
+	"github.com/vpsflow/vpsflow/libs/go/security/jwt"
+	"github.com/vpsflow/vpsflow/services/auth/internal/domain"
+	"github.com/vpsflow/vpsflow/services/auth/internal/usecase"
 )
 
 type memoryUsers struct {

@@ -1,4 +1,4 @@
-# Naming Conventions
+﻿# Naming Conventions
 
 ## Repository & Services
 
@@ -6,8 +6,8 @@
 |---------|-----------|---------|
 | Service directory | kebab-case | `agent-control` |
 | Go package | lowercase, no dashes | `agentcontrol` |
-| Docker image | bosscloud/<service> | `bosscloud/gateway` |
-| Helm chart | bosscloud-<service> | `bosscloud-gateway` |
+| Docker image | vpsflow/<service> | `vpsflow/gateway` |
+| Helm chart | vpsflow-<service> | `vpsflow-gateway` |
 
 ## API
 
@@ -20,12 +20,12 @@
 
 ## Events
 
-Format: `bosscloud.<bounded_context>.<aggregate>.<event>.v1`
+Format: `vpsflow.<bounded_context>.<aggregate>.<event>.v1`
 
 Examples:
-- `bosscloud.auth.user.authenticated.v1`
-- `bosscloud.vm.instance.created.v1`
-- `bosscloud.storage.volume.attached.v1`
+- `vpsflow.auth.user.authenticated.v1`
+- `vpsflow.vm.instance.created.v1`
+- `vpsflow.storage.volume.attached.v1`
 
 ## Database
 
@@ -65,7 +65,7 @@ Examples:
 
 ## Proto / gRPC
 
-- Package: `bosscloud.<domain>.v1`
+- Package: `vpsflow.<domain>.v1`
 - Services: PascalCase (`VirtualMachineService`)
 - RPCs: verb + noun (`CreateVirtualMachine`)
 - Messages: PascalCase (`CreateVirtualMachineRequest`)
