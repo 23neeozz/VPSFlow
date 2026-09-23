@@ -74,3 +74,6 @@ temp/
 *.tar.gz
 *.tgz
 *.7z
+
+# Local Profile Repo
+.profile_repo/
