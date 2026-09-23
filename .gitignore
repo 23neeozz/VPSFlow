@@ -1,0 +1,76 @@
+# Dependencies
+node_modules/
+.pnp
+.pnp.js
+
+# Build outputs
+dist/
+build/
+.next/
+out/
+bin/
+*.exe
+*.dll
+*.so
+*.dylib
+
+# Go
+vendor/
+*.test
+coverage.out
+coverage.html
+*.prof
+
+# Environment
+.env
+.env.*
+!.env.example
+!*.example
+
+# IDE
+.idea/
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Logs
+*.log
+logs/
+
+# Docker volumes (local)
+.platform-data/
+
+# Terraform
+.terraform/
+*.tfstate
+*.tfstate.*
+
+# Secrets
+*.pem
+*.key
+!platform/docker/certs/.gitkeep
+
+# Test artifacts
+test-results/
+playwright-report/
+
+# Temporary
+tmp/
+temp/
+*.tmp
+
+# Archives & Large Compressed Backups
+*.rar
+*.zip
+*.tar
+*.tar.gz
+*.tgz
+*.7z

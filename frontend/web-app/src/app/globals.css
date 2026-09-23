@@ -1,0 +1,64 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+  --bc-bg: #000000;
+  --bc-bg-secondary: #0a0a0a;
+  --bc-card: #111111;
+  --bc-card-hover: #1a1a1a;
+  --bc-sidebar: #000000;
+  --bc-primary: #ffffff;
+  --bc-primary-hover: #e5e5e5;
+  --bc-border: rgba(255, 255, 255, 0.1);
+  --bc-border-hover: rgba(255, 255, 255, 0.22);
+}
+
+@layer base {
+  * {
+    @apply border-bc-border;
+  }
+
+  body {
+    @apply bg-bc-bg font-sans text-bc-text-primary antialiased;
+    font-size: 15px;
+    line-height: 1.6;
+  }
+
+  ::selection {
+    background: rgba(255, 255, 255, 0.25);
+    color: #fff;
+  }
+}
+
+@layer components {
+  .bc-mesh {
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    background:
+      radial-gradient(ellipse 80% 50% at 50% -20%, rgba(255, 255, 255, 0.04), transparent),
+      radial-gradient(ellipse 60% 40% at 100% 0%, rgba(255, 255, 255, 0.03), transparent),
+      radial-gradient(ellipse 50% 30% at 0% 100%, rgba(255, 255, 255, 0.02), transparent),
+      var(--bc-bg);
+  }
+
+  .bc-noise {
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    opacity: 0.04;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+
+  .bc-glass {
+    @apply border border-bc-border bg-bc-bg-secondary/60 backdrop-blur-xl;
+  }
+
+  .bc-focus {
+    @apply outline-none ring-2 ring-bc-primary/40 ring-offset-2 ring-offset-bc-bg;
+  }
+}

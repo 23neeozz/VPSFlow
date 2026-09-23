@@ -1,0 +1,113 @@
+name: CI
+
+on:
+  push:
+    branches: [main, develop]
+  pull_request:
+    branches: [main, develop]
+
+env:
+  GO_VERSION: "1.23"
+  NODE_VERSION: "22"
+
+jobs:
+  go-lint-test:
+    name: Go Lint & Test
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-go@v5
+        with:
+          go-version: ${{ env.GO_VERSION }}
+          cache-dependency-path: |
+            libs/go/**/go.sum
+            services/**/go.sum
+
+      - name: Download dependencies
+        run: |
+          for mod in libs/go/config libs/go/errors libs/go/ids libs/go/observability libs/go/httpx libs/go/security services/gateway services/auth; do
+            (cd "$mod" && go mod download)
+          done
+
+      - name: Run go vet
+        run: |
+          go vet ./libs/go/config/...
+          go vet ./libs/go/errors/...
+          go vet ./libs/go/ids/...
+          go vet ./libs/go/observability/...
+          go vet ./libs/go/httpx/...
+          go vet ./libs/go/security/...
+          go vet ./services/gateway/...
+          go vet ./services/auth/...
+
+      - name: Run tests
+        run: |
+          cd libs/go/config && go test -race -count=1 ./...
+          cd ../errors && go test -race -count=1 ./...
+          cd ../ids && go test -race -count=1 ./...
+          cd ../observability && go test -race -count=1 ./...
+          cd ../httpx && go test -race -count=1 ./...
+          cd ../security && go test -race -count=1 ./...
+          cd ../../../services/gateway && go test -race -count=1 ./...
+          cd ../auth && go test -race -count=1 ./...
+
+      - name: Build services
+        run: |
+          cd services/gateway && go build -o /dev/null ./cmd/gateway
+          cd ../auth && go build -o /dev/null ./cmd/auth
+
+  contract-validation:
+    name: Contract Validation
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Validate OpenAPI specs
+        uses: char0n/swagger-editor-validate@v1
+        with:
+          definition-file: contracts/openapi/gateway-v1.yaml
+
+      - name: Validate Auth OpenAPI
+        uses: char0n/swagger-editor-validate@v1
+        with:
+          definition-file: contracts/openapi/auth-v1.yaml
+
+      - name: Validate IAM OpenAPI
+        uses: char0n/swagger-editor-validate@v1
+        with:
+          definition-file: contracts/openapi/iam-v1.yaml
+
+      - name: Validate Tenant OpenAPI
+        uses: char0n/swagger-editor-validate@v1
+        with:
+          definition-file: contracts/openapi/tenant-v1.yaml
+
+  docker-build:
+    name: Docker Build
+    runs-on: ubuntu-latest
+    needs: [go-lint-test]
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Build service images
+        run: |
+          docker build -f services/gateway/Dockerfile -t bosscloud/gateway:ci .
+          docker build -f services/auth/Dockerfile -t bosscloud/auth:ci .
+
+  security-scan:
+    name: Security Scan
+    runs-on: ubuntu-latest
+    needs: [go-lint-test]
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-go@v5
+        with:
+          go-version: ${{ env.GO_VERSION }}
+
+      - name: Run govulncheck
+        run: |
+          go install golang.org/x/vuln/cmd/govulncheck@latest
+          cd services/gateway && govulncheck ./...
+          cd ../auth && govulncheck ./...

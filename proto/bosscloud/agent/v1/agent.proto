@@ -1,0 +1,104 @@
+syntax = "proto3";
+
+package bosscloud.agent.v1;
+
+option go_package = "github.com/bosscloud/bosscloud/proto/bosscloud/agent/v1;agentv1";
+
+import "bosscloud/common/v1/common.proto";
+
+// AgentControlService manages hypervisor agent connections and command dispatch.
+service AgentControlService {
+  rpc RegisterAgent(RegisterAgentRequest) returns (RegisterAgentResponse);
+  rpc Heartbeat(HeartbeatRequest) returns (HeartbeatResponse);
+  rpc ExecuteCommand(ExecuteCommandRequest) returns (ExecuteCommandResponse);
+  rpc StreamEvents(stream AgentEvent) returns (stream ControlEvent);
+}
+
+message RegisterAgentRequest {
+  string hypervisor_id = 1;
+  string agent_version = 2;
+  string certificate_pem = 3;
+  NodeCapacity capacity = 4;
+}
+
+message RegisterAgentResponse {
+  string session_id = 1;
+  int64 heartbeat_interval_seconds = 2;
+}
+
+message HeartbeatRequest {
+  string hypervisor_id = 1;
+  string session_id = 2;
+  NodeCapacity capacity = 3;
+}
+
+message HeartbeatResponse {
+  bool acknowledged = 1;
+}
+
+message ExecuteCommandRequest {
+  string command_id = 1;
+  string hypervisor_id = 2;
+  CommandType type = 3;
+  bytes payload = 4;
+  bosscloud.common.v1.TenantContext tenant = 5;
+}
+
+message ExecuteCommandResponse {
+  string command_id = 1;
+  CommandStatus status = 2;
+  bytes result = 3;
+  string error_message = 4;
+}
+
+message AgentEvent {
+  string hypervisor_id = 1;
+  AgentEventType type = 2;
+  bytes payload = 3;
+  int64 timestamp_unix = 4;
+}
+
+message ControlEvent {
+  ControlEventType type = 1;
+  bytes payload = 2;
+}
+
+message NodeCapacity {
+  int32 cpu_cores = 1;
+  int64 memory_bytes = 2;
+  int64 storage_bytes = 3;
+  int32 running_vms = 4;
+}
+
+enum CommandType {
+  COMMAND_TYPE_UNSPECIFIED = 0;
+  COMMAND_TYPE_CREATE_DOMAIN = 1;
+  COMMAND_TYPE_START_DOMAIN = 2;
+  COMMAND_TYPE_STOP_DOMAIN = 3;
+  COMMAND_TYPE_DESTROY_DOMAIN = 4;
+  COMMAND_TYPE_DEFINE_DOMAIN = 5;
+  COMMAND_TYPE_CREATE_SNAPSHOT = 6;
+  COMMAND_TYPE_MIGRATE_DOMAIN = 7;
+}
+
+enum CommandStatus {
+  COMMAND_STATUS_UNSPECIFIED = 0;
+  COMMAND_STATUS_PENDING = 1;
+  COMMAND_STATUS_RUNNING = 2;
+  COMMAND_STATUS_COMPLETED = 3;
+  COMMAND_STATUS_FAILED = 4;
+}
+
+enum AgentEventType {
+  AGENT_EVENT_TYPE_UNSPECIFIED = 0;
+  AGENT_EVENT_TYPE_METRICS = 1;
+  AGENT_EVENT_TYPE_DOMAIN_STATE_CHANGED = 2;
+  AGENT_EVENT_TYPE_COMMAND_COMPLETED = 3;
+}
+
+enum ControlEventType {
+  CONTROL_EVENT_TYPE_UNSPECIFIED = 0;
+  CONTROL_EVENT_TYPE_EXECUTE_COMMAND = 1;
+  CONTROL_EVENT_TYPE_UPDATE_CONFIG = 2;
+  CONTROL_EVENT_TYPE_SHUTDOWN = 3;
+}

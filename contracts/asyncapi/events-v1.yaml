@@ -1,0 +1,77 @@
+asyncapi: 3.0.0
+info:
+  title: BossCloud Domain Events
+  version: 1.0.0
+  description: Event bus contracts for BossCloud platform.
+
+servers:
+  nats:
+    host: localhost:4222
+    protocol: nats
+    description: NATS JetStream development broker
+
+channels:
+  bosscloud.platform.service.started.v1:
+    address: bosscloud.platform.service.started.v1
+    messages:
+      ServiceStarted:
+        $ref: "#/components/messages/ServiceStarted"
+
+  bosscloud.auth.user.authenticated.v1:
+    address: bosscloud.auth.user.authenticated.v1
+    messages:
+      UserAuthenticated:
+        $ref: "#/components/messages/UserAuthenticated"
+
+components:
+  messages:
+    ServiceStarted:
+      name: ServiceStarted
+      title: Service Started
+      contentType: application/json
+      payload:
+        $ref: "#/components/schemas/EventEnvelope"
+
+    UserAuthenticated:
+      name: UserAuthenticated
+      title: User Authenticated
+      contentType: application/json
+      payload:
+        $ref: "#/components/schemas/EventEnvelope"
+
+  schemas:
+    EventEnvelope:
+      type: object
+      required:
+        - event_id
+        - event_type
+        - event_version
+        - tenant_id
+        - occurred_at
+        - producer
+        - correlation_id
+        - payload
+      properties:
+        event_id:
+          type: string
+          format: uuid
+        event_type:
+          type: string
+        event_version:
+          type: string
+        tenant_id:
+          type: string
+        occurred_at:
+          type: string
+          format: date-time
+        producer:
+          type: string
+        correlation_id:
+          type: string
+        causation_id:
+          type: string
+        schema_ref:
+          type: string
+        payload:
+          type: object
+          additionalProperties: true

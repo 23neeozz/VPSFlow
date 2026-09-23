@@ -1,0 +1,33 @@
+syntax = "proto3";
+
+package bosscloud.common.v1;
+
+option go_package = "github.com/bosscloud/bosscloud/proto/bosscloud/common/v1;commonv1";
+
+// PaginationRequest defines cursor-based pagination parameters.
+message PaginationRequest {
+  string cursor = 1;
+  int32 limit = 2;
+}
+
+// PaginationResponse contains cursor pagination metadata.
+message PaginationResponse {
+  string next_cursor = 1;
+  bool has_more = 2;
+  int32 total_count = 3;
+}
+
+// TenantContext carries tenant isolation metadata for internal RPC calls.
+message TenantContext {
+  string tenant_id = 1;
+  string project_id = 2;
+  string actor_id = 3;
+  repeated string permissions = 4;
+}
+
+// ErrorDetail provides structured error information for gRPC responses.
+message ErrorDetail {
+  string code = 1;
+  string message = 2;
+  map<string, string> metadata = 3;
+}

@@ -1,0 +1,3 @@
+DROP TABLE IF EXISTS node_capacity;
+DROP TABLE IF EXISTS hypervisors;
+DROP TABLE IF EXISTS clusters;

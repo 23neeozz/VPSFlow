@@ -1,0 +1,21 @@
+go 1.23.0
+
+use (
+	./agents/hypervisor-agent
+	./libs/go/agentprotocol
+	./libs/go/config
+	./libs/go/errors
+	./libs/go/httpx
+	./libs/go/ids
+	./libs/go/observability
+	./libs/go/security
+	./services/agent-control
+	./services/auth
+	./services/cluster
+	./services/console
+	./services/gateway
+	./services/iam
+	./services/tenant
+	./services/vm
+	./services/vps
+)
